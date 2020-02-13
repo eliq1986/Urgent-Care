@@ -1,0 +1,208 @@
+export default {
+  local: [{
+              medication: "Amoxicillin All",
+              price: 15
+          },
+          {
+              medication: "Augmentin 875mg/125mg #20",
+              price: 25
+          },
+          {
+              medication: "Azithromycin susp 100mg",
+              price: 15
+          },
+          {
+              medication: "Azithromycin Tab 250mg",
+              price: 15
+          },
+          {
+              medication: "Bactrim Tab 800mg/160mg #14",
+              price: 10
+          },
+          {
+              medication: "Bromfed Dm",
+              price: 15
+          },
+          {
+              medication: "cepacol/losagens",
+              price: 15
+          },
+          {
+              medication: "ciprofloxacin tab 500mg #10",
+              price: 15
+          },
+          {
+              medication: "clindamycin 150mg #30",
+              price: 20
+          }, {
+              medication: "dicloxacillin 500mg",
+              price: 20
+          },
+          {
+              medication: "doxycycline 100mg #14",
+              price: 20
+          },
+          {
+              medication: "flagyl 500mg #14",
+              price: 15
+          },
+          {
+              medication: "flexeril 10mg #14",
+              price: 10
+          },
+          {
+              medication: "flonase 50mcg 120 sprays",
+              price: 15
+          },
+          {
+              medication: "fluconazole 150mg #1",
+              price: 5
+          },
+          {
+              medication: "ibuprofen 600mg #21",
+              price: 10
+          },
+          {
+              medication: "ibuprofen 800mg #21",
+              price: 10
+          },
+          {
+              medication: "keflex 500mg #28",
+              price: 10
+          },
+          {
+              medication: "ketoconazole 2% 5 grams",
+              price: 25
+          },
+          {
+              medication: "levaquin 500mg #10",
+              price: 20
+          },
+          {
+              medication: "levaquin 750mg #5",
+              price: 20
+          },
+          {
+              medication: "lisinopril 40mg #90",
+              price: 20
+          },
+          {
+              medication: "loperamide hcl #12",
+              price: 10
+          },
+          {
+              medication: "maxitrol opth 5 ml",
+              price: 20
+          },
+          {
+              medication: "meclizine 12.5mg # 30",
+              price: 10
+          },
+          {
+              medication: "methylprednisdone 4mg",
+              price: 15
+          },
+          {
+              medication: "mupirocin ointment 2% 22grams",
+              price: 20
+          },
+          {
+              medication: "naproxen 500mg #14",
+              price: 10
+          },
+          {
+              medication: "nitrofurantoin macro 100mg",
+              price: 20
+          },
+          {
+              medication: "omeprazole 20mg #30",
+              price: 20
+          },
+          {
+              medication: "ondansetron 4mg #6",
+              price: 10
+          },
+          {
+              medication: "pedialyte 1 pack of 4",
+              price: 15
+          },
+          {
+              medication: "prednisone 10mg #10",
+              price: 15
+          },
+          {
+              medication: "probiotic #60",
+              price: 15
+          },
+          {
+              medication: "promethazine dm 118 ml",
+              price: 4
+          },
+          {
+              medication: "pyridium 200mg #12",
+              price: 15
+          },
+          {
+              medication: "robaxin 750mg #20",
+              price: 15
+          },
+          {
+              medication: "tamiflu",
+              price: 35
+          },
+          {
+              medication: "tessalon 200mg #15",
+              price: 25
+          },
+          {
+              medication: "tobramycin opth 0.3% 5ml",
+              price: 20
+          },
+          {
+              medication: "triamcinolone cream 0.1% 30mg",
+              price: 10
+          },
+          {
+              medication: "tussin",
+              price: 15
+          },
+          {
+              medication: "valtrex 1g #15 1st out break",
+              price: 30
+          },
+          {
+              medication: "valtrex 1g #21 shingles",
+              price: 25
+          },
+          {
+              medication: "valtrex 1g #4 cold sores",
+              price: 20
+          },
+          {
+             medication: "valtrex 1g #5 recurrent herpes",
+             price: 20
+          },
+          {
+            medication: "ventolin hfa 90 mcg #60 inhalations",
+            price: 40
+          }
+      ],
+      cash: [{
+              medication: "Amoxicillin All",
+              price: 20
+          },
+          {
+              medication: "Augmentin 875/125mg #20",
+              price: 30
+          }
+      ],
+      country: [{
+              medication: "Amoxicillin All",
+              price: 40
+          },
+          {
+              medication: "Augmentin 875/125mg #20",
+              price: 40
+        }]
+
+      }

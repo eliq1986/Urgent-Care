@@ -1,0 +1,11 @@
+li {
+  border: 5px solid black;
+  width: 500px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 1.3em;
+}
+
+p {
+  padding: 5px;
+}

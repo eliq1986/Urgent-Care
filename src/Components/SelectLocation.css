@@ -1,0 +1,9 @@
+.select-location {
+ display: flex;
+ justify-content: center;
+ padding: 40px;
+}
+
+label {
+  padding-right: 10px;
+}
