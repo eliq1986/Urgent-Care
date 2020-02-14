@@ -7,6 +7,7 @@ import CardConfiguration from './CardConfiguration';
 const CardContainer = ({ showList }) => {
     return CardConfiguration.map(eachCard =>
       <Cards
+      key={eachCard.title}
       showList={showList}
       eachCard={eachCard} />);
 }
