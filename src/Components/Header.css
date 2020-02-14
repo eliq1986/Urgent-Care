@@ -1,6 +1,18 @@
+header {
+  background-image: linear-gradient(red,#F8F8F8 , #F8F8F8 ,white);
+  padding: 50px;
+}
+
 h1 {
   text-align: center;
   padding: 20px;
-  font-size: 4em;
+  font-size: 5em;
   margin-bottom: 100px;
+  letter-spacing: 10px;
+}
+
+
+.uc-span {
+  font-weight: bold;
+  text-transform: uppercase;
 }

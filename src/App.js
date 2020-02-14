@@ -4,7 +4,7 @@ import './App.css';
 
 import SelectLocation from './Components/SelectLocation';
 import Header from './Components/Header';
-import Price from './pricing/Pricing';
+import Price from './Components/Pricing/Pricing';
 import List from './Components/List';
 
 import CardContainer from './Components/CardContainer';
@@ -15,11 +15,13 @@ class App extends Component {
   state = {
     selection: null,
     list: false,
-    total: 0
+    total: 0,
+    boughtItems: []
   }
 
 
   getOptionSelection = (selectOptionValue) => {
+
     this.setState({
       selection: selectOptionValue
     });
@@ -27,37 +29,60 @@ class App extends Component {
     if(this.state.selection === "Choose an option") {
        this.hideList();
     }
+     this.resetTotalAndItems();
   }
 
-  addPrice = (priceToAdd) => {
+
+  addItem = (itemToAdd) => {
+    const newBoughtItems = [...this.state.boughtItems];
+    newBoughtItems.push(itemToAdd)
      this.setState({
-       total: this.state.total + priceToAdd
+       total: this.state.total + itemToAdd.price,
+       boughtItems: newBoughtItems
      });
+
+
   }
 
 
-  showList = () => this.setState({ list: true});
+  showList = (title) => {
+    if(title === "Medications") {
+      this.setState({ list: true});
+    }
+  };
 
   hideList = () => this.setState({ list:false });
 
 
+  resetTotalAndItems = () => {
+    this.setState({
+        total: 0,
+        boughtItems: []
+      })};
+
+
 
   render() {
-    let mainSection = null;
+    let cardSection = null;
     let listOfItems = null;
 
     if(this.state.selection && this.state.selection !== "Choose an option" && !this.state.list) {
-
-     mainSection = (
+     cardSection = (
        <CardContainer showList={this.showList} />
      );
 
-   } else if(this.state.list && this.state.selection !== "Choose an option") {
-     const price = Price[this.state.selection.toLowerCase()];
+    }
+    else if(this.state.list && this.state.selection !== "Choose an option") {
+     const prices = Price[this.state.selection.toLowerCase()];
      listOfItems = (
-       <div className="list">
-            <List price={price} addPrice={this.addPrice}/>
-            <h2>Total:${this.state.total}</h2>
+       <div className="list-container">
+            <List prices={prices} addItem={this.addItem}/>
+            <div>
+                <ol>
+                {this.state.boughtItems.map(eachItem => <li>{eachItem.medication.toUpperCase()} {eachItem.price}</li>)}
+                </ol>
+                <h2>Total:${this.state.total}</h2>
+           </div>
        </div>
      );
    }
@@ -67,12 +92,9 @@ class App extends Component {
       <Header />
       <SelectLocation getOptionSelection={this.getOptionSelection} />
       <div className="container">
-      {mainSection}
+      {cardSection}
       </div>
-
       {listOfItems}
-
-
     </div>
   );
 }

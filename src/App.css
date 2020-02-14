@@ -8,3 +8,8 @@
 .list {
   display: flex;
 }
+
+
+ol {
+  padding: 0;
+}

@@ -3,7 +3,9 @@ import './Header.css';
 
 const Header = () => {
   return(
-    <h1>Anaheim Urgent Care</h1>
+   <header >
+      <h1>Anaheim <span className="uc-span">urgent care</span></h1>
+   </header>
   );
 }
 

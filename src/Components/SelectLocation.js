@@ -1,26 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './SelectLocation.css';
 
-class SelectLocation extends Component {
+const SelectLocation = ({ getOptionSelection }) => {
 
-onSelectChange = (e) => {
-  this.props.getOptionSelection(e.target.value);
+   return (
+     <div className="select-location">
+     <label htmlFor="location-select">Choose a location:</label>
+        <select id="location-select" onChange={e => getOptionSelection(e.target.value)}>
+        <option>Choose an option</option>
+         <option>Local</option>
+         <option>Cash</option>
+         <option>Country</option>
+      </select>
+      </div>
+   );
 }
 
-  render() {
- return (
-   <div className="select-location">
-   <label htmlFor="location-select">Choose a location:</label>
-      <select id="location-select" onChange={this.onSelectChange}>
-      <option>Choose an option</option>
-       <option>Local</option>
-       <option>Cash</option>
-       <option>Country</option>
-    </select>
-    </div>
- );
-}
-}
 
 
 

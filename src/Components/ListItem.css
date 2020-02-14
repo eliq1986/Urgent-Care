@@ -1,11 +1,32 @@
 li {
-  border: 5px solid black;
-  width: 500px;
-  cursor: pointer;
+  border: 2px solid black;
+  width: 45%;
   margin: 5px;
   font-size: 1.3em;
+  text-align: center;
+  font-weight: bold;
 }
 
 p {
   padding: 5px;
+}
+
+button.add-medication {
+  border-radius: 7.5px;
+  width: 50%;
+  margin: auto;
+  display: block;
+  padding: 10px;
+  border: 3px solid #7F00FF;
+  margin-bottom: 10px;
+  transition: all .5s ease-out;
+}
+
+.add-medication:hover {
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  background: #7F00FF;
+
 }
