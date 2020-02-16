@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-import './App.css';
 
-
+// custom components
+import CardContainer from './Components/CardContainer';
 import SelectLocation from './Components/SelectLocation';
+import ListContainer from './Components/ListContainer';
 import Header from './Components/Header';
 import Price from './Components/Pricing/Pricing';
 import List from './Components/List';
 
-import CardContainer from './Components/CardContainer';
+// css file
+import './App.css';
+
+
 
 
 class App extends Component {
+
+
 
   state = {
     selection: null,
@@ -20,7 +26,8 @@ class App extends Component {
   }
 
 
-  getOptionSelection = (selectOptionValue) => {
+// state changed; retrieves option value
+  getOptionSelection = selectOptionValue => {
 
     this.setState({
       selection: selectOptionValue
@@ -29,11 +36,13 @@ class App extends Component {
     if(this.state.selection === "Choose an option") {
        this.hideList();
     }
-     this.resetTotalAndItems();
+     this.resetPriceTotalAndItems();
   }
 
 
-  addItem = (itemToAdd) => {
+
+// state changer; changes integer and array.
+  addItem = itemToAdd => {
     const newBoughtItems = [...this.state.boughtItems];
     newBoughtItems.push(itemToAdd)
      this.setState({
@@ -45,16 +54,20 @@ class App extends Component {
   }
 
 
-  showList = (title) => {
+// state changer; shows list component
+  showList = title => {
     if(title === "Medications") {
       this.setState({ list: true});
     }
   };
 
+
+// state changer; hides list
   hideList = () => this.setState({ list:false });
 
 
-  resetTotalAndItems = () => {
+// state changer; resets price total INT & items ARRAY
+  resetPriceTotalAndItems = () => {
     this.setState({
         total: 0,
         boughtItems: []
@@ -63,27 +76,19 @@ class App extends Component {
 
 
   render() {
-    let cardSection = null;
-    let listOfItems = null;
+    let listOfItems;;
+    let cardSection;
 
     if(this.state.selection && this.state.selection !== "Choose an option" && !this.state.list) {
-     cardSection = (
-       <CardContainer showList={this.showList} />
-     );
-
+      cardSection =  <CardContainer showList={this.showList} />;
     }
+
+
     else if(this.state.list && this.state.selection !== "Choose an option") {
      const prices = Price[this.state.selection.toLowerCase()];
+
      listOfItems = (
-       <div className="list-container">
-            <List prices={prices} addItem={this.addItem}/>
-            <div>
-                <ol>
-                {this.state.boughtItems.map(eachItem => <li>{eachItem.medication.toUpperCase()} {eachItem.price}</li>)}
-                </ol>
-                <h2>Total:${this.state.total}</h2>
-           </div>
-       </div>
+       <ListContainer prices={prices} addItem={this.addItem} boughtItems={this.state.boughtItems} total={this.state.total}/>
      );
    }
 
