@@ -6,12 +6,12 @@ const ListContainer = props => {
   return (
   <div className="list-container">
        <List prices={props.prices} addItem={props.addItem}/>
-       <div>
-           <ol>
+
+           <ol className="items-bought">
            {props.boughtItems.map(eachItem => <li className="medications-bought" key={eachItem.medication}>{eachItem.medication.toUpperCase()} ${eachItem.price}</li>)}
            </ol>
-           <h2>Total:${props.total}</h2>
-      </div>
+           <h2 className="items-total">Total:${props.total}</h2>
+    
   </div>
 );
 }

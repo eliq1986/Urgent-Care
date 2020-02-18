@@ -3,3 +3,10 @@ li.medications-bought {
    width: 100%;
    text-align: left;
 }
+
+
+.items-total {
+  font-size:  35px;
+  padding: 0;
+
+}

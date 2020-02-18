@@ -6,17 +6,12 @@ import SelectLocation from './Components/SelectLocation';
 import ListContainer from './Components/ListContainer';
 import Header from './Components/Header';
 import Price from './Components/Pricing/Pricing';
-import List from './Components/List';
 
 // css file
 import './App.css';
 
 
-
-
 class App extends Component {
-
-
 
   state = {
     selection: null,
@@ -45,13 +40,14 @@ class App extends Component {
   addItem = itemToAdd => {
     const newBoughtItems = [...this.state.boughtItems];
     newBoughtItems.push(itemToAdd)
-     this.setState({
-       total: this.state.total + itemToAdd.price,
+     this.setState(prevState => {
+      return {
+       total: prevState.total + itemToAdd.price,
        boughtItems: newBoughtItems
-     });
-
-
-  }
+     }
+   }
+ );
+}
 
 
 // state changer; shows list component
