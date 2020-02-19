@@ -1,12 +1,12 @@
-
-li.medications-bought {
-   width: 100%;
-   text-align: left;
+.list-container {
+  margin: auto;
+  width: 90%;
 }
 
 
-.items-total {
-  font-size:  35px;
-  padding: 0;
-
+.search-bar {
+  width: 80%;
+  margin: auto;
+  display: block;
+  padding: 10px;
 }

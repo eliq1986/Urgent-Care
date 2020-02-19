@@ -1,15 +1,10 @@
 ul.item-list {
-  margin-top: 5px;
   list-style: none;
-  width: 60%;
-  padding: 0;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
-
-}
-
-.list-container {
   margin: auto;
-  width: 95%;
-  display: flex;
+  padding: 0;
+  justify-content: center;
+
 }

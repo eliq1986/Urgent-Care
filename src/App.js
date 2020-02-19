@@ -69,6 +69,11 @@ class App extends Component {
         boughtItems: []
       })};
 
+// getSearchInput
+
+ getSearchInput = a => {
+
+ }
 
 
   render() {
@@ -84,7 +89,7 @@ class App extends Component {
      const prices = Price[this.state.selection.toLowerCase()];
 
      listOfItems = (
-       <ListContainer prices={prices} addItem={this.addItem} boughtItems={this.state.boughtItems} total={this.state.total}/>
+       <ListContainer getSearchInput={this.getSearchInput} prices={prices} addItem={this.addItem} boughtItems={this.state.boughtItems} total={this.state.total}/>
      );
    }
 
