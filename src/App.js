@@ -17,15 +17,16 @@ class App extends Component {
     selection: null,
     list: false,
     total: 0,
-    boughtItems: []
+    boughtItems: [],
+    medicationPrices: null
   }
 
 
 // state changed; retrieves option value
   getOptionSelection = selectOptionValue => {
-
     this.setState({
-      selection: selectOptionValue
+      selection: selectOptionValue,
+      medicationPrices: Price[selectOptionValue.toLowerCase()]
     });
 
     if(this.state.selection === "Choose an option") {
@@ -70,9 +71,14 @@ class App extends Component {
       })};
 
 // getSearchInput
-
  getSearchInput = a => {
+   console.log(a);
+   const filteredArray = Price[this.state.selection.toLowerCase()].filter(eachItem => eachItem.medication.toLowerCase().indexOf(a.toLowerCase()) > -1);
+   this.setState({medicationPrices: filteredArray});
+}
 
+ setMedicationList = (a) => {
+   this.setState({medicationList: a })
  }
 
 
@@ -86,10 +92,10 @@ class App extends Component {
 
 
     else if(this.state.list && this.state.selection !== "Choose an option") {
-     const prices = Price[this.state.selection.toLowerCase()];
+
 
      listOfItems = (
-       <ListContainer getSearchInput={this.getSearchInput} prices={prices} addItem={this.addItem} boughtItems={this.state.boughtItems} total={this.state.total}/>
+       <ListContainer getSearchInput={this.getSearchInput} prices={this.state.medicationPrices} addItem={this.addItem} boughtItems={this.state.boughtItems} total={this.state.total}/>
      );
    }
 
