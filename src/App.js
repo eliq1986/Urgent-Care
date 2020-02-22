@@ -14,8 +14,8 @@ import './App.css';
 class App extends Component {
 
   state = {
-    selection: null,
-    list: false,
+    selection: "Choose an option",
+    showListOfMedications: false,
     total: 0,
     boughtItems: [],
     medicationPrices: null
@@ -54,13 +54,13 @@ class App extends Component {
 // state changer; shows list component
   showList = title => {
     if(title === "Medications") {
-      this.setState({ list: true});
+      this.setState({ showListOfMedications: true});
     }
   };
 
 
 // state changer; hides list
-  hideList = () => this.setState({ list:false });
+  hideList = () => this.setState({ showListOfMedications:false });
 
 
 // state changer; resets price total INT & items ARRAY
@@ -71,23 +71,22 @@ class App extends Component {
       })};
 
 
-// getSearchInput
- getSearchInput = a => {
-   const filteredArray = Price[this.state.selection.toLowerCase()].filter(eachItem => eachItem.medication.toLowerCase().indexOf(a.toLowerCase()) > -1);
+// state changer getSearchInput and update array
+ getSearchInput = searchInputText => {
+   const filteredArray = Price[this.state.selection.toLowerCase()].filter(eachItem => eachItem.medication.toLowerCase().indexOf(searchInputText.toLowerCase()) > -1);
    this.setState({
      medicationPrices: filteredArray });
 }
 
 
  // remove medications
- removeMedication = (a) => {
-     console.log(this.state.medicationPrices);
-   const c = [...this.state.boughtItems]
-   const b = c.filter(eachitem => !eachitem.medication.includes(a.medication));
-   this.setState((prevState) => {
+ removeMedication = medicationToRemove => {
+   const copyOfMedicationsBought = [...this.state.boughtItems]
+   const medicationsStillBuying = copyOfMedicationsBought.filter(eachitem => !eachitem.medication.includes(medicationToRemove.medication));
+   this.setState(prevState => {
   return  {
-     boughtItems: b,
-     total: prevState.total - a.price
+     boughtItems: medicationsStillBuying,
+     total: prevState.total - medicationToRemove.price
    }})
 
  }
@@ -96,13 +95,15 @@ class App extends Component {
   render() {
     let listOfItems;;
     let cardSection;
-
-    if(this.state.selection && this.state.selection !== "Choose an option" && !this.state.list) {
+    const animateCards = this.state.selection !== "Choose an option" ? "fadeIn" :"fadeOut ";
+    const animateMedications = this.state.showListOfMedications ? "fadeIn" : "fadeOut";
+    
+    if(this.state.selection !== "Choose an option" && !this.state.showListOfMedications) {
       cardSection =  <CardContainer showList={this.showList} />;
     }
 
 
-    else if(this.state.list && this.state.selection !== "Choose an option") {
+    else if(this.state.showListOfMedications && this.state.selection !== "Choose an option") {
 
 
      listOfItems = (
@@ -122,10 +123,12 @@ class App extends Component {
     <div className="App">
       <Header />
       <SelectLocation getOptionSelection={this.getOptionSelection} />
-      <div className="container">
-      {cardSection}
+      <div className={`${animateCards}, container`}>
+        {cardSection}
       </div>
-      {listOfItems}
+      <div className={animateMedications}>
+         {listOfItems}
+      </div>
     </div>
   );
 }

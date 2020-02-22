@@ -6,10 +6,24 @@ ol {
 .container {
   display: flex;
   justify-content: space-around;
+  transition: all 1s ease-out;
+
 
 }
 
 
 .list {
   display: flex;
+}
+
+
+
+.fadeOut{
+     opacity:0;
+
+}
+.fadeIn{
+     opacity:1;
+     transition: 0.9s ease;
+
 }
