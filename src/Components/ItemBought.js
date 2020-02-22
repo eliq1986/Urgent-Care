@@ -5,8 +5,12 @@ import './ItemBought.css';
 const ItemBought = ({eachItem, removeMedication}) => {
   return (
     <li className="medications-bought">
+
     {eachItem.medication.toUpperCase()} ${eachItem.price}
-    <RemoveButton priceAndMedication={eachItem} removeMedication={removeMedication}  />
+
+    <RemoveButton
+     priceAndMedication={eachItem}
+    removeMedication={removeMedication}  />
     </li>
   );
 }

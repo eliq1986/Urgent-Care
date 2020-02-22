@@ -70,16 +70,13 @@ class App extends Component {
         boughtItems: []
       })};
 
+
 // getSearchInput
  getSearchInput = a => {
    const filteredArray = Price[this.state.selection.toLowerCase()].filter(eachItem => eachItem.medication.toLowerCase().indexOf(a.toLowerCase()) > -1);
    this.setState({
      medicationPrices: filteredArray });
 }
-
- setMedicationList = (a) => {
-   this.setState({medicationList: a })
- }
 
 
  // remove medications
