@@ -1,0 +1,10 @@
+
+li.medications-bought {
+   width: 83%;
+   text-align: left;
+   margin: auto;
+   border: 1px;
+   display: flex;
+   justify-content: space-between;
+
+}

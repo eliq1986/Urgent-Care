@@ -1,14 +1,24 @@
 import React from 'react';
+import PriceTotal from './PriceTotal';
+import ItemBought from './ItemBought';
 import './ItemsBought.css';
 
 
-const ItemsBought = (props) => {
+const ItemsBought = ({ boughtItems, total, removeMedication }) => {
   return (
     <div className="items-bought-container">
         <ol className="items-bought">
-        {props.boughtItems.map(eachItem => <li className="medications-bought" key={eachItem.medication}>{eachItem.medication.toUpperCase()} ${eachItem.price}</li>)}
+
+        {boughtItems.map(eachItem =>
+          <ItemBought
+          removeMedication={removeMedication}
+           key={eachItem.medication}
+           className="medications-bought"
+           eachItem={eachItem} />)};
+
         </ol>
-        <h2 className="items-total">Total:${props.total}</h2>
+        
+      <PriceTotal total={total} />
     </div>
   )
 }

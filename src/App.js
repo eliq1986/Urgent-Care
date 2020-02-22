@@ -72,13 +72,27 @@ class App extends Component {
 
 // getSearchInput
  getSearchInput = a => {
-   console.log(a);
    const filteredArray = Price[this.state.selection.toLowerCase()].filter(eachItem => eachItem.medication.toLowerCase().indexOf(a.toLowerCase()) > -1);
-   this.setState({medicationPrices: filteredArray});
+   this.setState({
+     medicationPrices: filteredArray });
 }
 
  setMedicationList = (a) => {
    this.setState({medicationList: a })
+ }
+
+
+ // remove medications
+ removeMedication = (a) => {
+     console.log(this.state.medicationPrices);
+   const c = [...this.state.boughtItems]
+   const b = c.filter(eachitem => !eachitem.medication.includes(a.medication));
+   this.setState((prevState) => {
+  return  {
+     boughtItems: b,
+     total: prevState.total - a.price
+   }})
+
  }
 
 
@@ -95,7 +109,15 @@ class App extends Component {
 
 
      listOfItems = (
-       <ListContainer getSearchInput={this.getSearchInput} prices={this.state.medicationPrices} addItem={this.addItem} boughtItems={this.state.boughtItems} total={this.state.total}/>
+       <ListContainer
+       getSearchInput={this.getSearchInput}
+       prices={this.state.medicationPrices}
+       addItem={this.addItem}
+       boughtItems={this.state.boughtItems}
+       total={this.state.total}
+       removeMedication={this.removeMedication}
+       />
+
      );
    }
 

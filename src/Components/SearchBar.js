@@ -19,7 +19,7 @@ class SearchBar extends Component {
   render() {
       return (
         <form>
-           <input type="text" className="search-bar" onChange={this.onInputChange}  value={this.state.searchInput}  />
+           <input type="text" className="search-bar" onChange={this.onInputChange}  value={this.state.searchInput} placeholder="Search for medications" />
         </form>
       );
   }

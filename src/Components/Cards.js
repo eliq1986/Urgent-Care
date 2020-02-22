@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 
 
 const Cards = props => {
-  const { image, title, text, buttonText} = props.eachCard;
+  const { image, title, text, buttonText } = props.eachCard;
   return (
     <Card style={{ width: '18rem' }}>
        <Card.Img variant="top" src={image} />

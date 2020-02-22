@@ -1,13 +1,5 @@
-
-li.medications-bought {
-   width: 100%;
-   text-align: left;
-}
-
-
-
-
 .items-bought-container {
+  margin-top: 20px;
   display: block;
   text-align: center;
 }
