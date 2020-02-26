@@ -36,6 +36,14 @@ class App extends Component {
      this.resetPriceTotalAndItems();
   }
 
+// changes backgroundColor and disable attribute
+changeBackGroundColorAndDisableAttr = () => {
+  this.state.medicationsSelected.forEach(item => {
+     item.style.backgroundColor = "white";
+     item.lastElementChild.disabled = false;
+  })
+}
+
 
 
 // state changer; changes integer and array.
@@ -70,6 +78,7 @@ class App extends Component {
 
 // state changer; resets price total INT & items ARRAY
   resetPriceTotalAndItems = () => {
+    this.changeBackGroundColorAndDisableAttr();
     this.setState({
         total: 0,
         boughtItems: []
