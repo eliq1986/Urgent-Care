@@ -6,5 +6,6 @@ li.medications-bought {
    border: 1px;
    display: flex;
    justify-content: space-between;
+   padding: 12px;
 
 }

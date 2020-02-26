@@ -25,6 +25,7 @@ class App extends Component {
 
 // state changed; retrieves option value
   getOptionSelection = selectOptionValue => {
+
     this.setState({
       selection: selectOptionValue,
       medicationPrices: Price[selectOptionValue.toLowerCase()]
@@ -38,25 +39,29 @@ class App extends Component {
 
 // changes backgroundColor and disable attribute
 changeBackGroundColorAndDisableAttr = () => {
+
   this.state.medicationsSelected.forEach(item => {
      item.style.backgroundColor = "white";
      item.lastElementChild.disabled = false;
-  })
+  });
+
 }
 
 
 
 // state changer; changes integer and array.
-  addItem = (itemToAdd, ref) => {
+  addItem = (itemToAdd, medSelected) => {
     const newBoughtItems = [...this.state.boughtItems];
-    const a = [...this.state.medicationsSelected];
-    a.push(ref.current.parentNode);
+    const copyMedicationsSelected = [...this.state.medicationsSelected];
+    copyMedicationsSelected.push(medSelected.current.parentNode);
+
     newBoughtItems.push(itemToAdd)
+
      this.setState(prevState => {
       return {
        total: prevState.total + itemToAdd.price,
        boughtItems: newBoughtItems,
-       medicationsSelected: a
+       medicationsSelected: copyMedicationsSelected
      }
    }
  );
@@ -119,8 +124,7 @@ changeBackGroundColorAndDisableAttr = () => {
 
 
   render() {
-    let listOfItems;;
-    let cardSection;
+    let listOfItems, cardSection;
 
     const animateCards = this.state.selection !== "Choose an option" ? "fadeIn" :"fadeOut ";
     const animateMedications = this.state.showListOfMedications ? "fadeIn" : "fadeOut";
