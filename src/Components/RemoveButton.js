@@ -1,11 +1,10 @@
 import React from 'react';
 
-const RemoveButton = (props) => <button onClick={(e)=> {
-  props.removeMedication(props.priceAndMedication)
-  console.log(e.target);
+const RemoveButton = props => <button onClick={e => {
+  props.removeMedication(props.priceAndMedication);
 }
 }
-  >Remove</button>
+>Remove</button>
 
 
 export default RemoveButton;

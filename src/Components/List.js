@@ -1,14 +1,15 @@
 import React from 'react';
-import Item from './ListItem';
+import ListItem from './ListItem';
 import './List.css';
 
 const List = props => {
   return (
      <ul className="item-list">
-      {props.prices.map(eachItem =>
-        <Item addItem={props.addItem}
+      {props.prices.map((eachItem, index) =>
+        <ListItem addItem={props.addItem}
          key={eachItem.medication}
-         item={eachItem} />)}
+         item={eachItem}
+         index={index} />)}
      </ul>
   );
 }

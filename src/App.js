@@ -18,7 +18,8 @@ class App extends Component {
     showListOfMedications: false,
     total: 0,
     boughtItems: [],
-    medicationPrices: null
+    medicationPrices: null,
+    medicationsSelected:[]
   }
 
 
@@ -38,16 +39,20 @@ class App extends Component {
 
 
 // state changer; changes integer and array.
-  addItem = itemToAdd => {
+  addItem = (itemToAdd, ref) => {
     const newBoughtItems = [...this.state.boughtItems];
+    const a = [...this.state.medicationsSelected];
+    a.push(ref.current.parentNode);
     newBoughtItems.push(itemToAdd)
      this.setState(prevState => {
       return {
        total: prevState.total + itemToAdd.price,
-       boughtItems: newBoughtItems
+       boughtItems: newBoughtItems,
+       medicationsSelected: a
      }
    }
  );
+
 }
 
 
@@ -81,23 +86,36 @@ class App extends Component {
 
  // remove medications
  removeMedication = medicationToRemove => {
-   const copyOfMedicationsBought = [...this.state.boughtItems]
+   const copyOfMedicationsBought = [...this.state.boughtItems];
+
+     this.state.medicationsSelected.forEach(item => {
+        if(item.firstElementChild.firstElementChild.textContent === medicationToRemove.medication.toUpperCase()) {
+          item.lastElementChild.disabled = false;
+          item.style.backgroundColor = "white";
+        }
+     });
+
+
    const medicationsStillBuying = copyOfMedicationsBought.filter(eachitem => !eachitem.medication.includes(medicationToRemove.medication));
+
    this.setState(prevState => {
   return  {
      boughtItems: medicationsStillBuying,
      total: prevState.total - medicationToRemove.price
-   }})
+   }});
 
  }
+
+
 
 
   render() {
     let listOfItems;;
     let cardSection;
+
     const animateCards = this.state.selection !== "Choose an option" ? "fadeIn" :"fadeOut ";
     const animateMedications = this.state.showListOfMedications ? "fadeIn" : "fadeOut";
-    
+
     if(this.state.selection !== "Choose an option" && !this.state.showListOfMedications) {
       cardSection =  <CardContainer showList={this.showList} />;
     }

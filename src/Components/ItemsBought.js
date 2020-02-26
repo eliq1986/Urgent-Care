@@ -14,10 +14,10 @@ const ItemsBought = ({ boughtItems, total, removeMedication }) => {
           removeMedication={removeMedication}
            key={eachItem.medication}
            className="medications-bought"
-           eachItem={eachItem} />)};
+           eachItem={eachItem} />)}
 
         </ol>
-        
+
       <PriceTotal total={total} />
     </div>
   )

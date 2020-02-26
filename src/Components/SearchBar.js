@@ -6,9 +6,9 @@ class SearchBar extends Component {
    searchInput: ""
  }
 
+// state changer; updates search field input
  onInputChange = e => {
-
- this.setState({searchInput: e.target.value}, () => {
+   this.setState({searchInput: e.target.value}, () => {
    this.props.getSearchInput(this.state.searchInput);
  });
 

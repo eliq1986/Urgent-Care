@@ -1,11 +1,13 @@
 import React from 'react';
 import './ListItem.css';
 
-const Item = props => {
+const ListItem = props => {
+
   const { medication, price } = props.item;
 
+  let r = React.createRef();
   return (
-    <li className="format-item">
+    <li className="format-item" >
      <div>
           <p>{medication.toUpperCase()}</p>
           <p>${price}</p>
@@ -13,11 +15,11 @@ const Item = props => {
       <button className="add-medication" onClick={e  => {
         e.target.disabled = true
         e.target.parentNode.style.backgroundColor = "#50C878";
-        props.addItem(props.item);
+        props.addItem(props.item, r);
       }
-    }>ADD</button>
+    } ref={r}>ADD</button>
     </li>
   );
 }
 
-export default Item;
+export default ListItem;
