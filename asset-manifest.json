@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/myapp/static/css/main.ff612dc5.chunk.css",
+    "main.js": "/myapp/static/js/main.93aa8699.chunk.js",
+    "main.js.map": "/myapp/static/js/main.93aa8699.chunk.js.map",
+    "runtime-main.js": "/myapp/static/js/runtime-main.7a5b3656.js",
+    "runtime-main.js.map": "/myapp/static/js/runtime-main.7a5b3656.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/myapp/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.fbd94eee.chunk.js": "/myapp/static/js/2.fbd94eee.chunk.js",
+    "static/js/2.fbd94eee.chunk.js.map": "/myapp/static/js/2.fbd94eee.chunk.js.map",
+    "index.html": "/myapp/index.html",
+    "precache-manifest.97099234c943776f3efcab8b9773266e.js": "/myapp/precache-manifest.97099234c943776f3efcab8b9773266e.js",
+    "service-worker.js": "/myapp/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/myapp/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.ff612dc5.chunk.css.map": "/myapp/static/css/main.ff612dc5.chunk.css.map",
+    "static/js/2.fbd94eee.chunk.js.LICENSE.txt": "/myapp/static/js/2.fbd94eee.chunk.js.LICENSE.txt",
+    "static/media/blood.jpg": "/myapp/static/media/blood.676f7932.jpg",
+    "static/media/medication.jpg": "/myapp/static/media/medication.0ee44482.jpg",
+    "static/media/procedures.jpg": "/myapp/static/media/procedures.27671b51.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a5b3656.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.fbd94eee.chunk.js",
+    "static/css/main.ff612dc5.chunk.css",
+    "static/js/main.93aa8699.chunk.js"
+  ]
+}
