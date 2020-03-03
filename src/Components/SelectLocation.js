@@ -8,7 +8,7 @@ const SelectLocation = ({ getOptionSelection }) => {
      <label htmlFor="location-select">Choose a location:</label>
         <select id="location-select" onChange={e => getOptionSelection(e.target.value)}>
           <option  >Choose an option</option>
-          <option >Local</option>
+          <option >Insurance</option>
           <option>Cash</option>
           <option>Country</option>
          </select>
