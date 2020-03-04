@@ -1,5 +1,5 @@
 export default {
-  local: [{
+  insurance: [{
               medication: "Amoxicillin All",
               price: 15
           },
