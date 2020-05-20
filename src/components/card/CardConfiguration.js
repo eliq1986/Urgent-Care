@@ -1,7 +1,7 @@
 // images for cards
-import medication from '../assets/images/medication.jpg';
-import procedures from '../assets/images/procedures.jpg';
-import blood from '../assets/images/blood.jpg';
+import medication from '../../assets/images/medication.jpg';
+import procedures from '../../assets/images/procedures.jpg';
+import blood from '../../assets/images/blood.jpg';
 
 export default [
   {

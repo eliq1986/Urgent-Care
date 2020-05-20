@@ -1,5 +1,5 @@
 import React from 'react';
-import RemoveButton from './RemoveButton';
+import RemoveButton from '../button/RemoveButton';
 import './ItemBought.css';
 
 const ItemBought = ({eachItem, removeMedication}) => {

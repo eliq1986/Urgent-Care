@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 // custom components
-import CardContainer from './Components/CardContainer';
-import SelectLocation from './Components/SelectLocation';
-import ListContainer from './Components/ListContainer';
-import Header from './Components/Header';
-import Price from './Components/Pricing/Pricing';
+import CardContainer from './components/card/CardContainer';
+import SelectLocation from './components/select/SelectLocation';
+import ListContainer from './components/list/ListContainer';
+import Header from './components/header/Header';
+import Price from './price-data';
 
 // css file
 import './App.css';

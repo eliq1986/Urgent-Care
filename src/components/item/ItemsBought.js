@@ -1,5 +1,5 @@
 import React from 'react';
-import PriceTotal from './PriceTotal';
+import PriceTotal from '../price/PriceTotal';
 import ItemBought from './ItemBought';
 import './ItemsBought.css';
 

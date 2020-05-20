@@ -1,6 +1,6 @@
 import React from 'react';
-import ItemsBought from './ItemsBought';
-import SearchBar from './SearchBar';
+import ItemsBought from '../item/ItemsBought';
+import SearchBar from '../search/SearchBar';
 import './ListContainer.css';
 import List from './List';
 
@@ -19,7 +19,7 @@ const ListContainer = props => {
        <List
        prices={props.prices}
        addItem={props.addItem}/>
-       
+
   </div>
 );
 }
